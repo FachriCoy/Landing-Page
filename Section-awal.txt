@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Usaha Jahit Rumahan</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+    color: #2d3436;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(135deg, #4a7c9e 0%, #7ba8c4 100%);
+    padding: 60px 24px 80px;
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    animation: fadeInUp 0.8s ease;
+}
+
+.hero p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 16px;
+    line-height: 1.6;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero-list {
+    text-align: left;
+    display: inline-block;
+    margin: 20px 0 32px;
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-list li {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    margin: 10px 0;
+    padding-left: 8px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: #4a7c9e;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* PRODUCT IMAGE */
+.product-section {
+    background: white;
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.product-image-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.product-image-wrapper img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(74, 124, 158, 0.2));
+}
+
+@keyframes floatAnimation {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* SECTION STYLES */
+section {
+    padding: 80px 24px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 16px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #636e72;
+    margin-bottom: 48px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* TESTIMONI */
+.testimoni {
+    background: linear-gradient(180deg, white 0%, #f8f9fa 100%);
+}
+
+.testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testi-card {
+    background: white;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.testi-card::before {
+    content: '"';
+    position: absolute;
+    top: 16px;
+    left: 24px;
+    font-size: 64px;
+    color: #4a7c9e;
+    opacity: 0.1;
+    font-family: Georgia, serif;
+}
+
+.testi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(74, 124, 158, 0.15);
+}
+
+.testi-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 16px;
+}
+
+.testi-author {
+    font-weight: 600;
+    color: #4a7c9e;
+    font-size: 14px;
+}
+
+/* MASALAH */
+.masalah {
+    background: #fff;
+}
+
+.masalah-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.masalah-card {
+    background: linear-gradient(135deg, #d4e9f5 0%, #b8d9ed 100%);
+    padding: 28px;
+    border-radius: 16px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    box-shadow: 0 4px 15px rgba(74, 124, 158, 0.15);
+    transition: all 0.3s ease;
+}
+
+.masalah-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(74, 124, 158, 0.25);
+}
+
+.masalah-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.masalah-content h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3436;
+    margin-bottom: 6px;
+}
+
+.masalah-content p {
+    font-size: 14px;
+    color: #636e72;
+    line-height: 1.5;
+}
+
+/* SOLUSI */
+.solusi {
+    background: linear-gradient(180deg, #f8f9fa 0%, white 100%);
+}
+
+.solusi-intro {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.solusi-intro h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 12px;
+}
+
+.solusi-intro p {
+    font-size: 18px;
+    color: #636e72;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.solusi-grid {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 20px 0 30px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #667eea #e9ecef;
+}
+
+.solusi-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.solusi-grid::-webkit-scrollbar-track {
+    background: #e9ecef;
+    border-radius: 10px;
+}
+
+.solusi-grid::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.solusi-card-new {
+    min-width: 340px;
+    max-width: 340px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 2px solid #f0f0f0;
+    flex-shrink: 0;
+}
+
+.solusi-card-new:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(102, 126, 234, 0.2);
+    border-color: #667eea;
+}
+
+.solusi-card-header {
+    background: linear-gradient(135deg, #4a7c9e 0%, #7ba8c4 100%);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.solusi-card-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.solusi-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    display: inline-block;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.solusi-card-header h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.solusi-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+}
+
+.solusi-card-body {
+    padding: 24px;
+}
+
+.solusi-card-body p {
+    font-size: 15px;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.solusi-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.solusi-features li {
+    font-size: 14px;
+    color: #636e72;
+    padding: 8px 0;
+    padding-left: 28px;
+    position: relative;
+}
+
+.solusi-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* HARGA */
+.pricing {
+    background: white;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.price-card {
+    background: white;
+    border-radius: 8px;
+    padding: 28px 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.price-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: #d1d5db;
+}
+
+.price-card.featured {
+    background: linear-gradient(135deg, #5a8fb5 0%, #6b9ec5 100%);
+    color: white;
+    border: none;
+    transform: scale(1);
+}
+
+.price-card.featured:hover {
+    transform: translateY(-3px);
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #ef4444;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.price-header h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.price-header p {
+    font-size: 13px;
+    opacity: 0.75;
+    margin-bottom: 16px;
+}
+
+.old-price {
+    font-size: 15px;
+    text-decoration: line-through;
+    opacity: 0.5;
+    margin-bottom: 2px;
+}
+
+.current-price {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1;
+}
+
+.current-price span {
+    font-size: 20px;
+}
+
+.price-features {
+    margin: 16px 0;
+    padding: 16px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.price-card.featured .price-features {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.price-features ul {
+    list-style: none;
+}
+
+.price-features li {
+    padding: 7px 0;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.4;
+}
+
+.price-features li::before {
+    content: '✓';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: #10b981;
+    color: white;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.price-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #4a7c9e, #7ba8c4);
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+    box-shadow: 0 2px 8px rgba(74, 124, 158, 0.3);
+}
+
+.price-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(74, 124, 158, 0.4);
+    background: linear-gradient(135deg, #3d6a85, #6b9ec5);
+}
+
+.price-card.featured .price-button {
+    background: white;
+    color: #4a7c9e;
+}
+
+.price-card.featured .price-button:hover {
+    background: #f8f9fa;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 20px 60px;
+        min-height: 400px;
+    }
+    
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .hero p {
+        font-size: 15px;
+    }
+    
+    .hero-list li {
+        font-size: 14px;
+    }
+    
+    .cta-button {
+        padding: 14px 32px;
+        font-size: 15px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .section-subtitle {
+        font-size: 16px;
+    }
+    
+    .solusi-intro h2 {
+        font-size: 28px;
+    }
+    
+    .solusi-intro p {
+        font-size: 16px;
+    }
+    
+    .solusi-card-new {
+        min-width: 280px;
+        max-width: 280px;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .price-card.featured {
+        transform: scale(1);
+    }
+    
+    section {
+        padding: 60px 20px;
+    }
+}
+
+/* NOTIFICATION PREMIUM */
+.notif-box{position:fixed;bottom:20px;right:20px;background:linear-gradient(135deg,#ffffff,#f3fbff);display:flex;gap:12px;padding:14px 16px;border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.15);align-items:center;font-size:13px;opacity:0;transform:translateY(30px) scale(.95);transition:.5s ease;z-index:9999;max-width:280px}
+.notif-box.show{opacity:1;transform:translateY(0) scale(1)}
+.notif-box img{width:46px;height:46px;border-radius:50%;object-fit:cover;}
+.notif-box strong{color:#16a34a;font-weight:700}
+.notif-box .time{color:#6b7280;font-size:11px}
+.notif-box .notif-action{font-weight:600;color:#0f172a}
+.notif-ring{position:absolute;width:10px;height:10px;background:#22c55e;border-radius:50%;top:6px;left:6px;box-shadow:0 0 0 rgba(34,197,94,.7);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.7)}70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}100%{box-shadow:0 0 0
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Cara Memulai Usaha Jahit Rumahan Dari Nol Hingga Bisa Terima Order!</h1>
+        <p>Cocok untuk remaja & pemula yang ingin punya penghasilan dari rumah meskipun belum bisa menjahit sama sekali.</p>
+        <a href="#harga" class="cta-button">Mulai Usaha Jahit Sekarang →</a>
+    </div>
+</section>
+
+<!-- PRODUCT IMAGE -->
+<section class="product-section">
+    <div class="container">
+        <div class="product-image-wrapper">
+            <img src="https://i.ibb.co.com/vx5GYQf7/Gemini-Generated-Image-35ylu835ylu835yl.png" alt="Panduan Usaha Jahit Rumahan" onerror="this.style.display='none'">
+        </div>
+    </div>
+</section>
+
+<!-- MASALAH -->
+<section class="masalah">
+    <div class="container">
+        <h2 class="section-title">Kesalahan Fatal yang Bikin Pemula Gagal</h2>
+        <p class="section-subtitle">Hindari jebakan ini sebelum terlambat!</p>
+        <div class="masalah-grid">
+            <div class="masalah-card">
+                <div class="masalah-icon">❌</div>
+                <div class="masalah-content">
+                    <h4>Modal Bengkak</h4>
+                    <p>Beli mesin mahal tanpa rencana bisnis yang jelas</p>
+                </div>
+            </div>
+            <div class="masalah-card">
+                <div class="masalah-icon">📉</div>
+                <div class="masalah-content">
+                    <h4>Tak Punya Pelanggan</h4>
+                    <p>Nunggu order datang sendiri tanpa strategi promosi</p>
+                </div>
+            </div>
+            <div class="masalah-card">
+                <div class="masalah-icon">💸</div>
+                <div class="masalah-content">
+                    <h4>Harga Salah</h4>
+                    <p>Terlalu murah atau terlalu mahal, pelanggan kabur</p>
+                </div>
+            </div>
+            <div class="masalah-card">
+                <div class="masalah-icon">🐢</div>
+                <div class="masalah-content">
+                    <h4>Kerja Lambat</h4>
+                    <p>Proses tidak rapi & tidak konsisten bikin repeat order susah</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOLUSI -->
+<section class="solusi">
+    <div class="container">
+        <div class="solusi-intro">
+            <h2>Semua Solusinya Ada di Sini</h2>
+            <p>Panduan lengkap yang akan membimbingmu dari nol hingga bisa terima order pertama dengan percaya diri!</p>
+        </div>
+        <div class="solusi-grid">
+            <div class="solusi-card-new">
+                <div class="solusi-card-header">
+                    <div class="solusi-icon">📚</div>
+                    <h4>Panduan dari Nol</h4>
+                    <span class="solusi-badge">Untuk Pemula</span>
+                </div>
+                <div class="solusi-card-body">
+                    <p>Langkah demi langkah mulai usaha jahit untuk pemula total yang belum pernah menjahit sekalipun</p>
+                    <ul class="solusi-features">
+                        <li>Tutorial step by step</li>
+                        <li>Dari basic hingga mahir</li>
+                        <li>Mudah dipahami pemula</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="solusi-card-new">
+                <div class="solusi-card-header">
+                    <div class="solusi-icon">⚙️</div>
+                    <h4>Rekomendasi Mesin</h4>
+                    <span class="solusi-badge">Hemat Budget</span>
+                </div>
+                <div class="solusi-card-body">
+                    <p>Mesin jahit terbaik sesuai budget & kebutuhan pemula dengan perbandingan lengkap</p>
+                    <ul class="solusi-features">
+                        <li>Review mesin terbaik</li>
+                        <li>Sesuai dengan budget</li>
+                        <li>Tips perawatan mesin</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="solusi-card-new">
+                <div class="solusi-card-header">
+                    <div class="solusi-icon">✂️</div>
+                    <h4>Teknik Dasar Jahit</h4>
+                    <span class="solusi-badge">Video Tutorial</span>
+                </div>
+                <div class="solusi-card-body">
+                    <p>Tutorial menjahit yang mudah dipahami & dipraktikkan dengan video step by step</p>
+                    <ul class="solusi-features">
+                        <li>Teknik jahit lurus & zigzag</li>
+                        <li>Cara pasang benang</li>
+                        <li>Tips jahit rapi</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="solusi-card-new">
+                <div class="solusi-card-header">
+                    <div class="solusi-icon">🎯</div>
+                    <h4>Cara Dapat Order</h4>
+                    <span class="solusi-badge">Terbukti Efektif</span>
+                </div>
+                <div class="solusi-card-body">
+                    <p>Strategi mendapatkan pelanggan pertama hingga repeat order yang sudah terbukti</p>
+                    <ul class="solusi-features">
+                        <li>Strategi cari klien</li>
+                        <li>Tips closing order</li>
+                        <li>Maintain pelanggan</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="solusi-card-new">
+                <div class="solusi-card-header">
+                    <div class="solusi-icon">💰</div>
+                    <h4>Penentuan Harga</h4>
+                    <span class="solusi-badge">Raih Untung</span>
+                </div>
+                <div class="solusi-card-body">
+                    <p>Rumus pricing yang tepat supaya untung & tetap kompetitif di pasaran</p>
+                    <ul class="solusi-features">
+                        <li>Rumus hitung harga</li>
+                        <li>Strategi pricing</li>
+                        <li>Cara bersaing</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="solusi-card-new">
+                <div class="solusi-card-header">
+                    <div class="solusi-icon">📱</div>
+                    <h4>Promosi Online</h4>
+                    <span class="solusi-badge">Digital Marketing</span>
+                </div>
+                <div class="solusi-card-body">
+                    <p>Cara promosi efektif di Instagram, WhatsApp & marketplace untuk jangkau lebih banyak customer</p>
+                    <ul class="solusi-features">
+                        <li>Strategi IG & WA</li>
+                        <li>Content marketing</li>
+                        <li>Tips viral organik</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONI -->
+<section class="testimoni">
+    <div class="container">
+        <h2 class="section-title">Kata Mereka yang Sudah Memulai</h2>
+        <p class="section-subtitle">Bukan janji kosong. Ini bukti nyata dari mereka yang sudah action!</p>
+        <div class="testi-grid">
+            <div class="testi-card">
+                <p class="testi-text">Aku awalnya nggak bisa jahit sama sekali, sekarang sudah dapat order kecil dari tetangga. Seneng banget rasanya!</p>
+                <div class="testi-author">— Rina, 21 tahun</div>
+            </div>
+            <div class="testi-card">
+                <p class="testi-text">Panduan ini ngebantu banget! Jadi ngerti harus mulai dari mana. Sekarang udah berani buka jasa alterasi di kampus.</p>
+                <div class="testi-author">— Dimas, 20 tahun</div>
+            </div>
+            <div class="testi-card">
+                <p class="testi-text">Nggak nyangka bisa dapat klien pertama cuma dari IG! Terima kasih panduannya lengkap banget.</p>
+                <div class="testi-author">— Aisyah, 19 tahun</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HARGA -->
+<section class="pricing" id="harga">
+    <div class="container">
+        <h2 class="section-title">Pilih Paket yang Cocok Untuk Kamu</h2>
+        <p class="section-subtitle">Investasi kecil untuk masa depan usahamu!</p>
+        <div class="pricing-grid">
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <h3>Paket Basic</h3>
+                    <p>Untuk yang baru mulai belajar</p>
+                </div>
+                <div class="old-price">Rp125.000</div>
+                <div class="current-price"><span>Rp</span>100.000</div>
+                <div class="price-features">
+                    <ul>
+                        <li>PDF panduan lengkap</li>
+                        <li>Checklist alat jahit pemula</li>
+                        <li>Template pesan order</li>
+                        <li>Tips dasar menjahit</li>
+                        <li>Akses grup support</li>
+                    </ul>
+                </div>
+                <a href="#" class="price-button">Pilih Paket Basic</a>
+            </div>
+
+            <div class="price-card featured">
+                <div class="badge">PALING LARIS</div>
+                <div class="price-header">
+                    <h3>Paket Pro</h3>
+                    <p>Solusi lengkap untuk serius berbisnis</p>
+                </div>
+                <div class="old-price">Rp324.000</div>
+                <div class="current-price"><span>Rp</span>149.000</div>
+                <div class="price-features">
+                    <ul>
+                        <li>Semua benefit di Paket Basic</li>
+                        <li>Video tutorial step by step</li>
+                        <li>Strategi promosi lengkap</li>
+                        <li>Contoh harga jasa jahit</li>
+                        <li>Template manajemen order</li>
+                        <li>Konsultasi 1x via chat</li>
+                        <li>Update materi gratis</li>
+                    </ul>
+                </div>
+                <a href="#" class="price-button">Ambil Paket Pro Sekarang</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+  <!-- PREMIUM NOTIFICATION -->
+<div id="notifBox" class="notif-box">
+  <div class="notif-ring"></div>
+  <img id="notifAvatar" src="https://i.pravatar.cc/60?img=11">
+  <div>
+    <strong id="notifName">Putri</strong> · <span id="notifCity">Jakarta</span><br>
+    <span id="notifAction" class="notif-action">Membeli Paket PRO</span><br>
+    <small class="time" id="notifTime">1 menit yang lalu</small>
+  </div>
+</div>
+
+<script>
+/* PREMIUM SOCIAL PROOF NOTIFICATION */
+const dataName = ["Putri","Fahmi","Nanda","Rizki","Dewi","Salsa","Ayu","Rio"]; 
+const dataCity = ["Jakarta","Bekasi","Bandung","Surabaya","Makassar","Depok","Medan"];
+const dataAction = [
+ "baru membeli Paket PRO",
+ "mengunduh panduan lengkap",
+ "mendapatkan bonus premium",
+ "mulai usaha hari ini",
+ "checkout Paket Terlaris"
+];
+
+function showNotif(){
+ const name = dataName[Math.floor(Math.random()*dataName.length)];
+ const city = dataCity[Math.floor(Math.random()*dataCity.length)];
+ const action = dataAction[Math.floor(Math.random()*dataAction.length)];
+ const minute = Math.floor(Math.random()*7)+1;
+ const avatar = `https://i.pravatar.cc/60?img=${Math.floor(Math.random()*70)}`;
+
+ document.getElementById("notifName").innerText = name;
+ document.getElementById("notifCity").innerText = city;
+ document.getElementById("notifAction").innerText = action;
+ document.getElementById("notifTime").innerText = minute + " menit yang lalu";
+ document.getElementById("notifAvatar").src = avatar;
+ const box = document.getElementById("notifBox");
+ box.classList.add("show");
+
+ setTimeout(()=>box.classList.remove("show"), 4000);
+}
+
+setTimeout(showNotif, 3000);
+setInterval(showNotif, 8000);
+</script>
+<script>
+// Smooth scroll untuk anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
