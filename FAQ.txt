@@ -1,13 +1,4 @@
 
-==STYLE FAQ==
-/* FAQ Accordion */
-    .faq .item{border-bottom:1px solid #eef2f7}
-    .faq button{width:100%;text-align:left;padding:14px;background:transparent;border:0;font-weight:600;display:flex;justify-content:space-between;align-items:center}
-    .faq .content{padding:0 14px;color:var(--muted);max-height:0;overflow:hidden;transition:max-height .4s ease, opacity .3s ease;opacity:0}
-.faq .content.open{opacity:1}
-
-==HTML FAQ==
-
 <!-- FAQ -->
     <section class="section faq" id="faq">
       <h2>FAQ — Pertanyaan yang Sering Ditanyakan</h2>
@@ -51,7 +42,13 @@ Membantu kamu melangkah meskipun masih ragu.</div>
       </div>
     </section>
 
-==JS FAQ==
+
+<style>
+    .faq .item{border-bottom:1px solid #eef2f7}
+    .faq button{width:100%;text-align:left;padding:14px;background:transparent;border:0;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+    .faq .content{padding:0 14px;color:var(--muted);max-height:0;overflow:hidden;transition:max-height .4s ease, opacity .3s ease;opacity:0}
+.faq .content.open{opacity:1}
+</style>
 <script>
     // FAQ Accordion - FIXED & SIMPLE
     document.querySelectorAll('.faq-btn').forEach(btn => {
