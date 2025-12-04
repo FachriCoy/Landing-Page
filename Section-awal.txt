@@ -27,7 +27,7 @@ body {
 
 /* HERO SECTION */
 .hero {
-    background: linear-gradient(135deg, #4a7c9e 0%, #7ba8c4 100%);
+    background: linear-gradient(135deg, #8576ff 0%, #b8b5ff 100%);
     padding: 60px 24px 80px;
     position: relative;
     overflow: hidden;
@@ -165,54 +165,93 @@ section {
 }
 
 /* TESTIMONI */
+/* TESTIMONI STYLE FIX */
 .testimoni {
-    background: linear-gradient(180deg, white 0%, #f8f9fa 100%);
+  background: linear-gradient(#f8fbff, #ffffff);
 }
 
-.testi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
+.testi-wrapper {
+  overflow-x: auto;
+}
+
+.testi-scroll {
+  display: flex;
+  gap: 18px;
+  padding: 16px 4px 32px;
+  scroll-snap-type: x mandatory;
+}
+
+.testi-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .testi-card {
-    background: white;
-    padding: 32px;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-    position: relative;
+  min-width: 320px;
+  max-width: 320px;
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  scroll-snap-align: center;
+  flex-shrink: 0;
 }
 
-.testi-card::before {
-    content: '"';
-    position: absolute;
-    top: 16px;
-    left: 24px;
-    font-size: 64px;
-    color: #4a7c9e;
-    opacity: 0.1;
-    font-family: Georgia, serif;
+.testi-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.testi-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(74, 124, 158, 0.15);
+.avatar {
+  width: 44px;
+  height: 44px;
+  background: #3b82f6;
+  color: #fff;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.testi-text {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #4a5568;
-    margin-bottom: 16px;
+.testi-header strong {
+  display: block;
+  font-size: 14px;
 }
 
-.testi-author {
-    font-weight: 600;
-    color: #4a7c9e;
-    font-size: 14px;
+.testi-header small {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.stars {
+  color: #fbbf24;
+  margin-bottom: 8px;
+}
+
+.testi-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* DOT INDICATOR */
+.scroll-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.scroll-dots span {
+  width: 8px;
+  height: 8px;
+  background: #cbd5e1;
+  border-radius: 50%;
+}
+
+.scroll-dots span.active {
+  background: #3b82f6;
 }
 
 /* MASALAH */
@@ -229,7 +268,7 @@ section {
 }
 
 .masalah-card {
-    background: linear-gradient(135deg, #d4e9f5 0%, #b8d9ed 100%);
+    background: linear-gradient(135deg, #b8b5ff 0%, #dcd6ff 100%);
     padding: 28px;
     border-radius: 16px;
     display: flex;
@@ -262,9 +301,9 @@ section {
     line-height: 1.5;
 }
 
-/* SOLUSI */
+ /*SOLUSI */
 .solusi {
-    background: linear-gradient(180deg, #f8f9fa 0%, white 100%);
+    background: linear-gradient(180deg, #f0f7ff 0%, white 100%);
 }
 
 .solusi-intro {
@@ -289,6 +328,7 @@ section {
 .solusi-grid {
     display: flex;
     gap: 24px;
+    align-items: stretch;
     overflow-x: auto;
     padding: 20px 0 30px;
     scroll-behavior: smooth;
@@ -329,7 +369,7 @@ section {
 }
 
 .solusi-card-header {
-    background: linear-gradient(135deg, #4a7c9e 0%, #7ba8c4 100%);
+    background: linear-gradient(135deg, #b8b5ff 0%, #8576ff 100%);
     padding: 24px;
     position: relative;
     overflow: hidden;
@@ -448,7 +488,7 @@ section {
 }
 
 .price-card.featured {
-    background: linear-gradient(135deg, #5a8fb5 0%, #6b9ec5 100%);
+    background: linear-gradient(135deg, #8576ff 0%, #6b9ec5 100%);
     color: white;
     border: none;
     transform: scale(1);
@@ -544,7 +584,7 @@ section {
     display: block;
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #4a7c9e, #7ba8c4);
+    background: linear-gradient(135deg, #4a7c9e, #8576ff);
     color: white;
     text-align: center;
     border-radius: 6px;
@@ -559,7 +599,7 @@ section {
 .price-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(74, 124, 158, 0.4);
-    background: linear-gradient(135deg, #3d6a85, #6b9ec5);
+    background: linear-gradient(135deg, #8576ff, #4a7c9e);
 }
 
 .price-card.featured .price-button {
@@ -641,7 +681,9 @@ section {
     }
 }
 
-/* NOTIFICATION PREMIUM */
+
+
+    /* NOTIFICATION PREMIUM */
 .notif-box{position:fixed;bottom:20px;right:20px;background:linear-gradient(135deg,#ffffff,#f3fbff);display:flex;gap:12px;padding:14px 16px;border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.15);align-items:center;font-size:13px;opacity:0;transform:translateY(30px) scale(.95);transition:.5s ease;z-index:9999;max-width:280px}
 .notif-box.show{opacity:1;transform:translateY(0) scale(1)}
 .notif-box img{width:46px;height:46px;border-radius:50%;object-fit:cover;}
@@ -649,7 +691,114 @@ section {
 .notif-box .time{color:#6b7280;font-size:11px}
 .notif-box .notif-action{font-weight:600;color:#0f172a}
 .notif-ring{position:absolute;width:10px;height:10px;background:#22c55e;border-radius:50%;top:6px;left:6px;box-shadow:0 0 0 rgba(34,197,94,.7);animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.7)}70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}100%{box-shadow:0 0 0
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.7)}70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}100%{box-shadow:0 0 0)}
+}
+
+/* ===== SCALEV FIX — PERKECIL CARD SOLUSI FINAL ===== */
+
+.solusi-grid {
+  gap: 12px !important;
+  padding-left: 10px;
+}
+
+/* Card utama */
+.solusi-card-new {
+  min-width: 190px !important;
+  max-width: 190px !important;
+  border-radius: 14px !important;
+  transform: scale(0.88);
+  transform-origin: top left;
+}
+
+/* Header (biru) */
+.solusi-card-header {
+  padding: 14px !important;
+}
+
+/* Icon atas */
+.solusi-icon {
+  font-size: 28px !important;
+  margin-bottom: 6px !important;
+}
+
+/* Judul */
+.solusi-card-header h4 {
+  font-size: 14px !important;
+  margin-bottom: 4px !important;
+}
+
+/* Badge */
+.solusi-badge {
+  font-size: 10px !important;
+  padding: 4px 10px !important;
+}
+
+/* Body card */
+.solusi-card-body {
+  padding: 14px !important;
+}
+
+/* Deskripsi */
+.solusi-card-body p {
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  margin-bottom: 8px !important;
+}
+
+/* List */
+/* ===== PERBAIKI LIST AGAR CARD TIDAK KETINGGIAN ===== */
+.solusi-features {
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.solusi-features li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+/* ICON BULAT MINI */
+.solusi-features li::before {
+  content: "✔";
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg,#5d85ff,#7fb5ff);
+  color: #fff;
+  font-size: 10px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ===== PERKECIL CARD ===== */
+.solusi-card-new {
+  max-width: 260px;
+  padding-bottom: 10px;
+}
+
+.solusi-card-body {
+  padding: 12px 14px;
+}
+
+.solusi-card-header {
+  padding: 12px;
+}
+
+/* TEXT DESKRIPSI JANGAN TERLALU PANJANG */
+.solusi-card-body p {
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+
+
+
 </style>
 </head>
 <body>
@@ -727,41 +876,32 @@ section {
                 <div class="solusi-card-body">
                     <p>Langkah demi langkah mulai usaha jahit untuk pemula total yang belum pernah menjahit sekalipun</p>
                     <ul class="solusi-features">
-                        <li>Tutorial step by step</li>
-                        <li>Dari basic hingga mahir</li>
-                        <li>Mudah dipahami pemula</li>
                     </ul>
                 </div>
             </div>
             
             <div class="solusi-card-new">
                 <div class="solusi-card-header">
-                    <div class="solusi-icon">⚙️</div>
+                    <div class="solusi-icon">⚙</div>
                     <h4>Rekomendasi Mesin</h4>
                     <span class="solusi-badge">Hemat Budget</span>
                 </div>
                 <div class="solusi-card-body">
                     <p>Mesin jahit terbaik sesuai budget & kebutuhan pemula dengan perbandingan lengkap</p>
                     <ul class="solusi-features">
-                        <li>Review mesin terbaik</li>
-                        <li>Sesuai dengan budget</li>
-                        <li>Tips perawatan mesin</li>
                     </ul>
                 </div>
             </div>
             
             <div class="solusi-card-new">
                 <div class="solusi-card-header">
-                    <div class="solusi-icon">✂️</div>
+                    <div class="solusi-icon">✂</div>
                     <h4>Teknik Dasar Jahit</h4>
                     <span class="solusi-badge">Video Tutorial</span>
                 </div>
                 <div class="solusi-card-body">
                     <p>Tutorial menjahit yang mudah dipahami & dipraktikkan dengan video step by step</p>
                     <ul class="solusi-features">
-                        <li>Teknik jahit lurus & zigzag</li>
-                        <li>Cara pasang benang</li>
-                        <li>Tips jahit rapi</li>
                     </ul>
                 </div>
             </div>
@@ -775,9 +915,6 @@ section {
                 <div class="solusi-card-body">
                     <p>Strategi mendapatkan pelanggan pertama hingga repeat order yang sudah terbukti</p>
                     <ul class="solusi-features">
-                        <li>Strategi cari klien</li>
-                        <li>Tips closing order</li>
-                        <li>Maintain pelanggan</li>
                     </ul>
                 </div>
             </div>
@@ -791,9 +928,6 @@ section {
                 <div class="solusi-card-body">
                     <p>Rumus pricing yang tepat supaya untung & tetap kompetitif di pasaran</p>
                     <ul class="solusi-features">
-                        <li>Rumus hitung harga</li>
-                        <li>Strategi pricing</li>
-                        <li>Cara bersaing</li>
                     </ul>
                 </div>
             </div>
@@ -807,9 +941,6 @@ section {
                 <div class="solusi-card-body">
                     <p>Cara promosi efektif di Instagram, WhatsApp & marketplace untuk jangkau lebih banyak customer</p>
                     <ul class="solusi-features">
-                        <li>Strategi IG & WA</li>
-                        <li>Content marketing</li>
-                        <li>Tips viral organik</li>
                     </ul>
                 </div>
             </div>
@@ -820,22 +951,58 @@ section {
 <!-- TESTIMONI -->
 <section class="testimoni">
     <div class="container">
-        <h2 class="section-title">Kata Mereka yang Sudah Memulai</h2>
-        <p class="section-subtitle">Bukan janji kosong. Ini bukti nyata dari mereka yang sudah action!</p>
-        <div class="testi-grid">
-            <div class="testi-card">
-                <p class="testi-text">Aku awalnya nggak bisa jahit sama sekali, sekarang sudah dapat order kecil dari tetangga. Seneng banget rasanya!</p>
-                <div class="testi-author">— Rina, 21 tahun</div>
+    <h2 class="section-title">Mereka Sudah Membuktikannya!</h2>
+    <p class="section-subtitle">Simak pengalaman para pemula yang sudah memulai usaha jahit</p>
+
+    <div class="testi-wrapper">
+      <div class="testi-scroll">
+
+        <div class="testi-card">
+          <div class="testi-header">
+            <div class="avatar">R</div>
+            <div>
+              <strong>Rina, 21 tahun</strong>
+              <small>Buka 3 bulan lalu · Surabaya</small>
             </div>
-            <div class="testi-card">
-                <p class="testi-text">Panduan ini ngebantu banget! Jadi ngerti harus mulai dari mana. Sekarang udah berani buka jasa alterasi di kampus.</p>
-                <div class="testi-author">— Dimas, 20 tahun</div>
-            </div>
-            <div class="testi-card">
-                <p class="testi-text">Nggak nyangka bisa dapat klien pertama cuma dari IG! Terima kasih panduannya lengkap banget.</p>
-                <div class="testi-author">— Aisyah, 19 tahun</div>
-            </div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p>
+            Panduannya lengkap banget! Aku jadi ngerti cara tentuin harga dan mulai promosi.
+            Alhamdulillah sekarang sudah bisa terima order jahit kecil-kecilan.
+          </p>
         </div>
+
+        <div class="testi-card">
+          <div class="testi-header">
+            <div class="avatar">D</div>
+            <div>
+              <strong>Dimas, 20 tahun</strong>
+              <small>Mahasiswa · Bandung</small>
+            </div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p>
+            Awalnya bingung harus mulai dari mana, sekarang sudah berani buka jasa 
+            permak baju di kos. Materinya mudah dipahami!
+          </p>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-header">
+            <div class="avatar">A</div>
+            <div>
+              <strong>Aisyah, 19 tahun</strong>
+              <small>Pelajar · Bogor</small>
+            </div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p>
+            Aku promo di WA & IG sesuai panduan, ternyata beneran ada order masuk.
+            Senang banget bisa punya penghasilan sendiri.
+          </p>
+        </div>
+
+      </div>
     </div>
 </section>
 
@@ -846,25 +1013,6 @@ section {
         <p class="section-subtitle">Investasi kecil untuk masa depan usahamu!</p>
         <div class="pricing-grid">
             
-            <div class="price-card">
-                <div class="price-header">
-                    <h3>Paket Basic</h3>
-                    <p>Untuk yang baru mulai belajar</p>
-                </div>
-                <div class="old-price">Rp125.000</div>
-                <div class="current-price"><span>Rp</span>100.000</div>
-                <div class="price-features">
-                    <ul>
-                        <li>PDF panduan lengkap</li>
-                        <li>Checklist alat jahit pemula</li>
-                        <li>Template pesan order</li>
-                        <li>Tips dasar menjahit</li>
-                        <li>Akses grup support</li>
-                    </ul>
-                </div>
-                <a href="#" class="price-button">Pilih Paket Basic</a>
-            </div>
-
             <div class="price-card featured">
                 <div class="badge">PALING LARIS</div>
                 <div class="price-header">
@@ -886,10 +1034,31 @@ section {
                 </div>
                 <a href="#" class="price-button">Ambil Paket Pro Sekarang</a>
             </div>
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <h3>Paket Basic</h3>
+                    <p>Untuk yang baru mulai belajar</p>
+                </div>
+                <div class="old-price">Rp125.000</div>
+                <div class="current-price"><span>Rp</span>100.000</div>
+                <div class="price-features">
+                    <ul>
+                        <li>PDF panduan lengkap</li>
+                        <li>Checklist alat jahit pemula</li>
+                        <li>Template pesan order</li>
+                        <li>Tips dasar menjahit</li>
+                        <li>Akses grup support</li>
+                    </ul>
+                </div>
+                <a href="#" class="price-button">Pilih Paket Basic</a>
+            </div>
 
         </div>
     </div>
 </section>
+
+        <!-- FAQ -->
 
   <!-- PREMIUM NOTIFICATION -->
 <div id="notifBox" class="notif-box">
@@ -901,6 +1070,7 @@ section {
     <small class="time" id="notifTime">1 menit yang lalu</small>
   </div>
 </div>
+
 
 <script>
 /* PREMIUM SOCIAL PROOF NOTIFICATION */
