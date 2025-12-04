@@ -1,78 +1,161 @@
-
 <!-- FAQ -->
-    <section class="section faq" id="faq">
-      <h2>FAQ — Pertanyaan yang Sering Ditanyakan</h2>
-      <div class="card">
-        <div class="item">
-          <button type="button" class="faq-btn">Saya benar-benar pemula, apakah bisa? <span>+</span></button>
-          <div class="content">Bisa banget! Panduan ini dibuat khusus bagi yang belum bisa menjahit sekalipun — mulai dari dasar hingga menerima order sederhana.</div>
-        </div>
-        <div class="item">
-          <button type="button" class="faq-btn">Perlu mesin jahit mahal? <span>+</span></button>
-          <div class="content">Tidak. Kamu bisa mulai dengan mesin jahit rumahan yang sederhana, lalu upgrade ketika usaha berkembang.</div>
-        </div>
-        <div class="item">
-          <button type="button" class="faq-btn">Berapa lama bisa dapat order? <span>+</span></button>
-          <div class="content">Tergantung usaha & promosi. Banyak yang mulai menerima order dalam minggu hingga 1–2 bulan setelah menerapkan strategi di panduan.</div>
-        </div>
-        <div class="item">
-          <button type="button" class="faq-btn">Apakah ada dukungan atau komunitas? <span>+</span></button>
-          <div class="content">Bisa disediakan grup diskusi / komunitas (opsional), silakan sesuaikan saat implementasi.</div>
-        </div>
-        <div class="item">
-          <button type="button" class="faq-btn">Apakah cocok untuk remaja? <span>+</span></button>
-          <div class="content">Sangat cocok.
-    Bahasanya ringan, mudah dipahami, dan langkah-langkahnya dibuat agar bisa dipraktikkan oleh remaja maupun dewasa pemula..</div>
-        </div>
-        <div class="item">
-          <button type="button" class="faq-btn">Berapa modal awal untuk memulai usaha jahit? <span>+</span></button>
-          <div class="content">Modal bisa disesuaikan.
-Kamu bisa mulai dari ratusan ribu hingga berkembang bertahap.
-Kami juga memberikan tips memulai dengan alat seadanya dulu.</div>
-        </div>
-        <div class="item">
-          <button type="button" class="faq-btn">Apakah ada garansi? <span>+</span></button>
-          <div class="content">Jika dalam waktu tertentu kamu merasa panduan tidak sesuai deskripsi, kamu bisa komplain sesuai kebijakan penjual.</div>
-        </div>
-        <div class="item">
-          <button type="button" class="faq-btn">Saya tidak percaya diri, apakah saya bisa? <span>+</span></button>
-          <div class="content">Justru itulah tujuan panduan ini dibuat.
-Membantu kamu melangkah meskipun masih ragu.</div>
+ <section class="faq-premium">
+  <div class="container">
+    <h2 class="section-title">Pertanyaan yang Sering Ditanyakan</h2>
+    <p class="section-subtitle">Kami jawab semua keraguan kamu di sini</p>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Apakah panduan ini cocok untuk pemula total?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          <p>Ya. Materi dirancang untuk kamu yang benar-benar mulai dari nol, bahkan jika belum pernah menjahit sama sekali.</p>
         </div>
       </div>
-    </section>
 
+      <div class="faq-item">
+        <button class="faq-question">
+          Haruskah saya punya mesin jahit dari awal?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          <p>Tidak harus. Kamu akan diarahkan kapan waktu tepat membeli mesin dan bagaimana memulai dengan alat seminimal mungkin.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Berapa modal minimum untuk mulai usaha jahit?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          <p>Kamu bisa mulai dari ratusan ribu dan menyesuaikan dengan kapasitas finansialmu.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Apakah saya bisa benar-benar dapat pelanggan?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          <p>Bisa. Panduan menjelaskan langkah promosi untuk mendapatkan order nyata, baik online maupun offline.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Materinya bisa diakses lewat HP?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-answer">
+          <p>Iya. Semua materi bisa dibuka lewat HP, tablet, atau laptop kapan pun kamu mau.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <style>
-    .faq .item{border-bottom:1px solid #eef2f7}
-    .faq button{width:100%;text-align:left;padding:14px;background:transparent;border:0;font-weight:600;display:flex;justify-content:space-between;align-items:center}
-    .faq .content{padding:0 14px;color:var(--muted);max-height:0;overflow:hidden;transition:max-height .4s ease, opacity .3s ease;opacity:0}
-.faq .content.open{opacity:1}
+.faq-premium {
+  background: linear-gradient(to bottom, #f0f7ff, #ffffff);
+  padding: 70px 16px;
+}
+
+.faq-premium .faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-premium .faq-item {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #e0ecff;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 8px 24px rgba(59,130,246,0.08),
+    inset 0 0 0 1px rgba(255,255,255,0.4);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.faq-premium .faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 32px rgba(59,130,246,0.12),
+    inset 0 0 0 1px rgba(255,255,255,0.6);
+}
+
+.faq-premium .faq-question {
+  width: 100%;
+  padding: 18px 20px;
+  background: linear-gradient(to right, #f8fbff, #ffffff);
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  color: #1e3a8a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-premium .faq-question:hover {
+  color: #2563eb;
+}
+
+.faq-premium .arrow {
+  font-size: 18px;
+  color: #2563eb;
+  transition: transform .3s ease;
+}
+
+.faq-premium .faq-item.active .arrow {
+  transform: rotate(180deg);
+}
+
+.faq-premium .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: linear-gradient(to right, #ffffff, #f5f9ff);
+  transition: max-height .35s ease;
+}
+
+.faq-premium .faq-answer p {
+  padding: 12px 20px 18px;
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.7;
+}
 </style>
+
 <script>
-    // FAQ Accordion - FIXED & SIMPLE
-    document.querySelectorAll('.faq-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const content = btn.nextElementSibling;
-        const isOpen = content.classList.contains('open');
+        document.querySelectorAll(".faq-question").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const item = btn.parentElement;
+    const answer = item.querySelector(".faq-answer");
 
-        // close others
-        document.querySelectorAll('.faq .content').forEach(c => {
-          c.classList.remove('open');
-          c.style.maxHeight = null;
-          c.style.opacity = 0;
-        });
-        document.querySelectorAll('.faq-btn span').forEach(s => s.textContent = '+');
-
-        // toggle current
-        if(!isOpen){
-          content.classList.add('open');
-          content.style.maxHeight = content.scrollHeight + 'px';
-          content.style.opacity = 1;
-          btn.querySelector('span').textContent = '-';
-        }
-      });
+    document.querySelectorAll(".faq-item").forEach(i => {
+      if (i !== item) {
+        i.classList.remove("active");
+        i.querySelector(".faq-answer").style.maxHeight = null;
+      }
     });
+
+    item.classList.toggle("active");
+
+    if (item.classList.contains("active")) {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    } else {
+      answer.style.maxHeight = null;
+    }
+  });
+});
+
 
     // Simple form handler (demo)
     function handleForm(e){
